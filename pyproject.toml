@@ -9,6 +9,8 @@ packages = [{include = "youtube_whisper"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+faster-whisper = "^0.7.1"
+black = "^23.7.0"
 
 
 [build-system]
