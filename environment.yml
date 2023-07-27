@@ -57,4 +57,3 @@ dependencies:
       - tqdm==4.65.0
       - typing-extensions==4.7.1
       - urllib3==2.0.4
-prefix: /home/yxb/.conda/envs/tmp1
