@@ -1,5 +1,6 @@
-from faster_whisper import WhisperModel
 import time
+
+from faster_whisper import WhisperModel
 
 
 def main():
