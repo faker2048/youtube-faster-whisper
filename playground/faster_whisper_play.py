@@ -4,7 +4,7 @@ import time
 
 def main():
     start_init = time.time()  # 开始初始化的时间
-    model = WhisperModel("base.en", device="cuda", compute_type="float16")
+    model = WhisperModel("tiny.en", device="cuda", compute_type="float16")
     end_init = time.time()  # 结束初始化的时间
     print(f"Initialization took {end_init - start_init} seconds")
 
