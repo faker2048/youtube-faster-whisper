@@ -1,4 +1,4 @@
-name: tmp1
+name: youtube-whisper
 channels:
   - defaults
 dependencies:
