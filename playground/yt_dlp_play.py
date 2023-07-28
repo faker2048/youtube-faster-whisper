@@ -34,16 +34,28 @@ def best_format_selector(ctx):
 
 
 def main():
-    URL = "https://www.youtube.com/watch?v=nWvCd8lC4_Q"
-
+    URL = "https://www.youtube.com/watch?v=BaW_jenozKc"
+    # retries, file_access_retries, fragment_retries,
     # ℹ️ See help(yt_dlp.YoutubeDL) for a list of available options and public functions
+    file_name = None
+
+    def file_name_hook(d):
+        nonlocal file_name
+        if d["status"] == "finished":
+            file_name = d["filename"]
+
     ydl_opts = {
         "format": best_format_selector,
         "concurrent_fragment_downloads": 8,
+        "progress_hooks": [file_name_hook],
+        "retries": 10,
+        "file_access_retries": 10,
+        "fragment_retries": 10,
     }
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         ydl.download([URL])
+    print(file_name)
 
 
 if __name__ == "__main__":
