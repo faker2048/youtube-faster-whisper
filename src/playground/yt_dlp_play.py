@@ -1,8 +1,7 @@
-import json
 import yt_dlp
 
 
-def best_format_selector(ctx):
+def best_format_selector(ctx: dict):
     """Select the best video and the best audio that won't result in an mkv.
     NOTE: This is just an example and does not handle all cases"""
 
