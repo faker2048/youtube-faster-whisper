@@ -1,7 +1,7 @@
 from faster_whisper import WhisperModel
 
 
-class YoutubeWhisper:
+class WhisperWrapper:
     def __init__(self, model: str = "tiny.en") -> None:
         try:
             self.model = WhisperModel(model, device="cuda", compute_type="float16")
