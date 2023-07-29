@@ -10,11 +10,6 @@ from src.youtube.download import download, download_audio
 
 
 @click.group()
-def main():
-    pass
-
-
-@main.command()
 @click.option("--url", "-u", required=True, help="Youtube URL.")
 @click.option("--threads", "-n", default=8, help="Number of threads to use.")
 @click.option(
@@ -59,7 +54,7 @@ def main():
     default=False,
     help="Only download video. Do not generate subtitles.",
 )
-def full(
+def main(
     url: str,
     threads: int,
     format: str,
@@ -101,6 +96,7 @@ def full(
             model = initialize_whisper_model(
                 model_name=model_name, model_root=model_root, cpu=cpu
             )
+            logger.info("Model initialized successfully.")
             segs, info = model.transcribe(
                 audio=audio_file_name,
                 vad_filter=True,
