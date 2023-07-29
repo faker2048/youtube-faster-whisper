@@ -1,9 +1,14 @@
 from setuptools import setup, find_packages
 
+with open("README.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
+
 setup(
     name="ytws",
-    version="0.1.0",
+    version="0.2.0",
     description="YouTube Whisper - A YouTube Downloader with Transcription",
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     author="faker2048",
     author_email="nspyia2002@gmail.com",
     url="https://github.com/faker2048/youtube-whisper",
