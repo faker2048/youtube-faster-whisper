@@ -1,4 +1,5 @@
 from threading import Thread
+import time
 
 import click
 import yt_dlp
@@ -97,14 +98,22 @@ def main(
                 model_name=model_name, model_root=model_root, cpu=cpu
             )
             logger.info("Model initialized successfully.")
+
+            begin_transcription = time.time()
             segs, info = model.transcribe(
                 audio=audio_file_name,
                 vad_filter=True,
                 task="transcribe" if not translate else "translate",
             )
             write_srt(segments=segs, file=srt_file_name)
+            logger.info(
+                f"Transcription completed in {time.time() - begin_transcription:.2f} \
+                    seconds. Audio duration: {info.duration:.2f} seconds."
+            )
+
             if os.path.exists(audio_file_name):
                 os.remove(audio_file_name)
+
         else:
             logger.info(
                 f"Skipping audio transcription due to {srt_file_name} already exists."
