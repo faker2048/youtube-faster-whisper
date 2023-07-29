@@ -14,6 +14,11 @@ These features make YTWS an efficient and user-friendly tool for downloading You
 
 ## 💽 Installation
 You can easily install YTWS using the following commands:
+
+```bash
+pip install ytws
+```
+or 
 ```bash
 git clone https://github.com/faker2048/youtube-whisper
 cd youtube-whisper
