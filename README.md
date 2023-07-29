@@ -22,19 +22,22 @@ If you don't have ffmpeg installed, you can use the standard method to install f
 conda install ffmpeg
 ```
 #### GPU Acceleration
-If you have not installed the CUDA, cudnn suite, and are looking for a straightforward installation method, you may refer to the following:
-- Linux
+Should you need to install the CUDA and cudnn suite, the following methods provide a simple solution:
+- For Linux:
 ```
 conda install cudnn
 ```
-- Windows
+- For Windows:
 ```
 pip3 install torch --index-url https://download.pytorch.org/whl/cu118
 
-# Installing additional torch libraries may not be the best method, but it's currently the most 
-# convenient ways I've found for Windows (compared to Nvidia's official CUDA installation). 
-# If you know of a better ways, your contributions are welcome!
+# While utilizing additional torch libraries may not be ideal, it's one of the most 
+# straightforward approaches I've discovered for Windows (relative to Nvidia's official CUDA 
+# installation). If you're aware of alternative methods or suggestions, your insight would be 
+# graciously appreciated!
 ```
+
+These steps aim to make the installation process as seamless as possible. Feel free to reach out if you have any questions or concerns!
 
 ## 🪄 Available Model
 
@@ -69,4 +72,21 @@ For further details and customization options, please refer to the help informat
 ytws --help
 ```
 
-We hope you find this tool beneficial and should you require further assistance, feel free to reach out. Happy downloading!
+## 🌟 Contributing to ytws
+
+We welcome your support for ytws! Your contributions make a difference.
+
+### How to Contribute
+- **Fork, Clone, Branch**: Start by forking and cloning the repository, then work in separate branches.
+- **Commit**: Follow the project's standards, and commit your changes.
+- **Pull Request**: Submit a brief pull request (PR) to the main branch.
+
+### Using Pre-Commit
+To ensure code format:
+
+```bash
+pip install pre-commit
+pre-commit install
+```
+
+Pre-commit will guide you through necessary checks and adjustments.
