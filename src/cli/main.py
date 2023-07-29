@@ -10,7 +10,7 @@ from src.whisper.transcribe import initialize_whisper_model
 from src.youtube.download import download, download_audio
 
 
-@click.group()
+@click.command()
 @click.option("--url", "-u", required=True, help="Youtube URL.")
 @click.option("--threads", "-n", default=8, help="Number of threads to use.")
 @click.option(
@@ -22,6 +22,7 @@ from src.youtube.download import download, download_audio
 @click.option(
     "--translate",
     "-t",
+    is_flag=True,
     default=False,
     help="Translate the subtitles to English.",
 )
@@ -40,18 +41,21 @@ from src.youtube.download import download, download_audio
 )
 @click.option(
     "--cpu",
+    is_flag=True,
     default=False,
     help="Use CPU instead of GPU. This is useful if you do not have a GPU.",
 )
 @click.option(
     "--srt_only",
     "-s",
+    is_flag=True,
     default=False,
     help="Only generate subtitles. Do not download video.",
 )
 @click.option(
     "--video_only",
     "-v",
+    is_flag=True,
     default=False,
     help="Only download video. Do not generate subtitles.",
 )
