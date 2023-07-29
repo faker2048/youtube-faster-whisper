@@ -1,13 +1,10 @@
-from src.youtube.download import download, download_audio
-from src.whisper.transcribe import initialize_whisper_model
 import asyncio
-from concurrent.futures import ThreadPoolExecutor
+
+from src.whisper.transcribe import initialize_whisper_model
+from src.youtube.download import download_audio
 
 
 async def main():
-    executor = ThreadPoolExecutor(max_workers=2)
-    loop = asyncio.get_event_loop()
-
     def task_audio():
         URL = "https://www.youtube.com/watch?v=3AtDnEC4zak"
         return download_audio(URL)
