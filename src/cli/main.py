@@ -24,6 +24,12 @@ def main():
     help="Download format. See: https://github.com/yt-dlp/yt-dlp#format-selection-examples",
 )
 @click.option(
+    "--translate",
+    "-t",
+    default=False,
+    help="Translate the subtitles to English.",
+)
+@click.option(
     "--model_name",
     "-m",
     default="tiny.en",
@@ -52,6 +58,7 @@ def full(
     url: str,
     threads: int,
     format: str,
+    translate: bool,
     model_name: str,
     model_root: str | None,
     srt_only: bool,
@@ -88,7 +95,11 @@ def full(
             model = initialize_whisper_model(
                 model_name=model_name, model_root=model_root
             )
-            segs, info = model.transcribe(audio=audio_file_name, vad_filter=True)
+            segs, info = model.transcribe(
+                audio=audio_file_name,
+                vad_filter=True,
+                task="transcribe" if not translate else "translate",
+            )
             write_srt(segments=segs, file=srt_file_name)
             if os.path.exists(audio_file_name):
                 os.remove(audio_file_name)
