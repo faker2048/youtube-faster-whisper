@@ -31,10 +31,28 @@ def __best_format_selector(cls, ctx):
         "protocol": f'{best_video["protocol"]}+{best_audio["protocol"]}',
     }
 
+def __best_audio_selector(cls, ctx):
+    """Select the best audio format"""
+    # formats are already sorted worst to best
+    formats = ctx.get("formats")[::-1]
+
+    # vcodec='none' means there is no video
+    best_audio = next(
+        f for f in formats if f["acodec"] != "none" and f["vcodec"] == "none"
+    )
+
+    # These are the minimum required fields for a format
+    yield {
+        "format_id": best_audio["format_id"],
+        "ext": best_audio["ext"],
+        "protocol": best_audio["protocol"],
+    }
+
+
 
 def download(url: str, threads: int = 8) -> str:
     """Download a video from YouTube and return the file name."""
-    file_name = None
+    file_name = ""
 
     def file_name_hook(d):
         nonlocal file_name
@@ -49,6 +67,8 @@ def download(url: str, threads: int = 8) -> str:
         "file_access_retries": 10,
         "fragment_retries": 10,
     }
+    
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         ydl.download([url])
+
     return file_name
