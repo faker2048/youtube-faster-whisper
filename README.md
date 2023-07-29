@@ -2,6 +2,16 @@
 
 YTWS is a command-line tool designed to download videos from YouTube and generate subtitles, all with the power of the efficient `faster-whisper`.
 
+
+## Features
+
+- **Easy to Use**: Get started without hassle.
+- **Fast Subtitle Generation**: Utilize `faster-whisper` for quick results.
+- **GPU Acceleration**: Simple guide for GPU utilization.
+- **Cross-Platform**: Works on Windows and Linux.
+
+These features make YTWS an efficient and user-friendly tool for downloading YouTube videos and generating subtitles.
+
 ## 💽 Installation
 You can easily install YTWS using the following commands:
 ```bash
