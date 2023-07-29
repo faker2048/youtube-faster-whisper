@@ -31,6 +31,7 @@ def __best_format_selector(cls, ctx):
         "protocol": f'{best_video["protocol"]}+{best_audio["protocol"]}',
     }
 
+
 def __best_audio_selector(cls, ctx):
     """Select the best audio format"""
     # formats are already sorted worst to best
@@ -47,7 +48,6 @@ def __best_audio_selector(cls, ctx):
         "ext": best_audio["ext"],
         "protocol": best_audio["protocol"],
     }
-
 
 
 def download(url: str, threads: int = 8) -> str:
@@ -67,7 +67,7 @@ def download(url: str, threads: int = 8) -> str:
         "file_access_retries": 10,
         "fragment_retries": 10,
     }
-    
+
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         ydl.download([url])
 
