@@ -43,6 +43,11 @@ def main():
     help="Root directory for the models.",
 )
 @click.option(
+    "--cpu",
+    default=False,
+    help="Use CPU instead of GPU. This is useful if you do not have a GPU.",
+)
+@click.option(
     "--srt_only",
     "-s",
     default=False,
@@ -61,6 +66,7 @@ def full(
     translate: bool,
     model_name: str,
     model_root: str | None,
+    cpu: bool,
     srt_only: bool,
     video_only: bool,
 ) -> None:
@@ -93,7 +99,7 @@ def full(
         if not os.path.exists(srt_file_name):
             logger.info(f"Transcribing audio from {audio_file_name}.")
             model = initialize_whisper_model(
-                model_name=model_name, model_root=model_root
+                model_name=model_name, model_root=model_root, cpu=cpu
             )
             segs, info = model.transcribe(
                 audio=audio_file_name,
