@@ -1,48 +1,72 @@
-# 🎥 YTWS: YouTube 下载与字幕生成工具 🔥
+# 🎥 YTWS: YouTube Download and Subtitle Generation Tool 🔥
 
 ![YTWS](https://images.unsplash.com/photo-1511379938547-c1f69419868d)
 
-YTWS 是一款命令行工具，它可以帮助你从 YouTube 下载视频，并生成字幕。这个工具基于高效的 `faster-whisper`。
+YTWS is a command-line tool designed to download videos from YouTube and generate subtitles, all with the power of the efficient `faster-whisper`.
 
-## 💽 安装
-使用下面的命令进行安装：
+## 💽 Installation
+You can easily install YTWS using the following commands:
 ```bash
-pip install -r requirements.txt
+git clone https://github.com/faker2048/youtube-whisper
+cd youtube-whisper
+pip install .
 ```
 
-## 🚀 快速开始
-你可以使用命令行工具下载 YouTube 视频并生成字幕。以下是如何使用的示例：
+### Preparations Before Running
 
-```bash
-ytws full --url [youtube_video_url] --threads 8 --format "bestvideo+bestaudio/best" --model_name "tiny.en"
+_Principle: Simplicity is key, and there should be no side effects._
+
+#### ffmpeg
+If you don't have ffmpeg installed, you can use the standard method to install ffmpeg in your computer's global environment (not detailed here), or you can use conda to install it in your Python virtual environment (recommended):
+```
+conda install ffmpeg
+```
+#### GPU Acceleration
+If you have not installed the CUDA, cudnn suite, and are looking for a straightforward installation method, you may refer to the following:
+- Linux
+```
+conda install cudnn
+```
+- Windows
+```
+pip3 install torch --index-url https://download.pytorch.org/whl/cu118
+
+# Installing additional torch libraries may not be the best method, but it's currently the most 
+# convenient ways I've found for Windows (compared to Nvidia's official CUDA installation). 
+# If you know of a better ways, your contributions are welcome!
 ```
 
-在这里，你需要替换 `[youtube_video_url]` 为你想要下载的 YouTube 视频的 URL。
+## 🪄 Available Model
 
-你也可以只下载视频，或者只生成字幕，使用 `--video_only` 或 `--srt_only` 选项即可。
+Visit https://huggingface.co/guillaumekln for more details.
 
-## 🎛️ 自定义设置
-该工具提供了多种自定义设置选项，如：
+## 🚀 Quick Start
+You can begin downloading YouTube videos and generating subtitles right away. Here's a simple example of how to use YTWS:
 
-- `--url`， `-u`: YouTube 视频的 URL
-- `--threads`, `-n`: 使用的线程数
-- `--format`, `-f`: 下载格式
-- `--model_name`, `-m`: 使用的模型名称
-- `--model_root`, `-r`: 模型的根目录
-- `--srt_only`, `-s`: 只生成字幕，不下载视频
-- `--video_only`, `-v`: 只下载视频，不生成字幕
+```bash
+# To download videos from YouTube and generate subtitles.
+ytws -m large-v2 -u https://www.youtube.com/watch?v=nWvCd8lC4_Q 
+```
 
-具体参考使用帮助获取更多信息：
+```bash
+# To generate .srt subtitles only. (This will download only the audio and delete it after transcribing)
+ytws -m large-v2 -u https://www.youtube.com/watch?v=nWvCd8lC4_Q --srt_only
+```
+
+```bash
+# Runs on cpu
+ytws -u https://www.youtube.com/watch?v=nWvCd8lC4_Q --cpu
+```
+
+Please replace `https://www.youtube.com/watch?v=nWvCd8lC4_Q` with the URL of the YouTube video you wish to download.
+
+For more customized options like downloading only the video or generating only the subtitles, you can use the `--video_only` or `--srt_only` options.
+
+## 🎛️ Custom Settings
+For further details and customization options, please refer to the help information:
 
 ```bash
 ytws --help
 ```
 
-## 🎉 体验 GPU 加速
-设置 GPU 支持非常简单。你只需要在初始化 whisper 模型时，通过 `--device` 选项设置设备即可，例如： 
-
-```bash
-ytws full --url [youtube_video_url] --device "cuda"
-```
-
-🎈 开始享受你的视频字幕生成之旅吧！
+We hope you find this tool beneficial and should you require further assistance, feel free to reach out. Happy downloading!
