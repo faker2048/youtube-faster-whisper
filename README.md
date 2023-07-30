@@ -12,6 +12,35 @@ YTWS is a command-line tool designed to download videos from YouTube and generat
 
 These features make YTWS an efficient and user-friendly tool for downloading YouTube videos and generating subtitles.
 
+## 🚀 Quick Start
+You can begin downloading YouTube videos and generating subtitles right away. Here's a simple example of how to use YTWS:
+
+```bash
+# To download videos from YouTube and generate subtitles.
+ytws -m large-v2 -u https://www.youtube.com/watch?v=nWvCd8lC4_Q 
+```
+
+```bash
+# To generate .srt subtitles only. (This will download only the audio and delete it after transcribing)
+ytws -m large-v2 -u https://www.youtube.com/watch?v=nWvCd8lC4_Q --srt_only
+```
+
+```bash
+# Runs on cpu
+ytws -u https://www.youtube.com/watch?v=nWvCd8lC4_Q --cpu
+```
+
+Please replace `https://www.youtube.com/watch?v=nWvCd8lC4_Q` with the URL of the YouTube video you wish to download.
+
+For more customized options like downloading only the video or generating only the subtitles, you can use the `--video_only` or `--srt_only` options.
+
+## 🎛️ Custom Settings
+For further details and customization options, please refer to the help information:
+
+```bash
+ytws --help
+```
+
 ## 💽 Installation
 You can easily install YTWS using the following commands:
 
@@ -55,35 +84,6 @@ These steps aim to make the installation process as seamless as possible. Feel f
 ## 🪄 Available Model
 
 Visit https://huggingface.co/guillaumekln for more details.
-
-## 🚀 Quick Start
-You can begin downloading YouTube videos and generating subtitles right away. Here's a simple example of how to use YTWS:
-
-```bash
-# To download videos from YouTube and generate subtitles.
-ytws -m large-v2 -u https://www.youtube.com/watch?v=nWvCd8lC4_Q 
-```
-
-```bash
-# To generate .srt subtitles only. (This will download only the audio and delete it after transcribing)
-ytws -m large-v2 -u https://www.youtube.com/watch?v=nWvCd8lC4_Q --srt_only
-```
-
-```bash
-# Runs on cpu
-ytws -u https://www.youtube.com/watch?v=nWvCd8lC4_Q --cpu
-```
-
-Please replace `https://www.youtube.com/watch?v=nWvCd8lC4_Q` with the URL of the YouTube video you wish to download.
-
-For more customized options like downloading only the video or generating only the subtitles, you can use the `--video_only` or `--srt_only` options.
-
-## 🎛️ Custom Settings
-For further details and customization options, please refer to the help information:
-
-```bash
-ytws --help
-```
 
 ## 🌟 Contributing to ytws
 
