@@ -1,110 +1,110 @@
 # 🎥 YTWS: YouTube Download and Subtitle Generation Tool 🔥
 
-YTWS is a command-line tool designed to download videos from YouTube and generate subtitles, all with the power of the efficient `faster-whisper`.
-
+YTWS is a command-line tool that allows you to download videos from YouTube and generate subtitles, all powered by the efficient `faster-whisper`.
 
 ## ⭐ Features
 
-- **Easy to Use**: Get started without hassle.
-- **Fast Subtitle Generation**: Utilize `faster-whisper` for quick results.
-- **GPU Acceleration**: Simple guide for GPU utilization.
-- **Cross-Platform**: Works on Windows and Linux.
+- **Easy to Use**: Start without any hassle.
+- **Fast Subtitle Generation**: Harness the speed of `faster-whisper`.
+- **GPU Acceleration**: A simple guide for harnessing GPU power.
+- **Cross-Platform Compatibility**: Runs on Windows and Linux. (Mac OS compatibility is likely but not tested.)
 
-These features make YTWS an efficient and user-friendly tool for downloading YouTube videos and generating subtitles.
+These features make YTWS an efficient and user-friendly choice for downloading YouTube videos and generating subtitles.
 
 ## ⚙ Requirements
 
-_Principle: Simplicity is key, and there should be no side effects._
+_Principle: Keep it simple, with no side effects._
 
 #### ffmpeg
-If you don't have ffmpeg installed, you can use the standard method to install ffmpeg in your computer's global environment (not detailed here), or you can use conda to install it in your Python virtual environment (recommended):
-```
+For Python virtual environment (recommended):
+```bash
 conda install ffmpeg
+```
+For Windows scoop users:
+```bash
+scoop install ffmpeg
 ```
 
 ## 💽 Installation
-You can easily install YTWS using the following commands:
+
+Install YTWS easily with these commands:
 
 ```bash
 pip install ytws
 ```
-or 
+or
 ```bash
 git clone https://github.com/faker2048/youtube-whisper
 cd youtube-whisper
 pip install .
 ```
 
-## 🚀 Quick Start
-You can begin downloading YouTube videos and generating subtitles right away. Here's a simple example of how to use YTWS:
+## 🚀 Usage
+
+Start downloading YouTube videos and generating subtitles right away:
 
 ```bash
-# To download videos from YouTube and generate subtitles.
+# To download videos and generate subtitles.
 ytws -m large-v2 -u https://www.youtube.com/watch?v=nWvCd8lC4_Q 
 ```
 
 ```bash
-# To generate .srt subtitles only. (This will download only the audio and delete it after transcribing)
+# To generate .srt subtitles only (this downloads only audio, deleting it after transcription).
 ytws -m large-v2 -u https://www.youtube.com/watch?v=nWvCd8lC4_Q --srt_only
 ```
 
 ```bash
-# Runs on cpu
+# Runs on CPU.
 ytws -u https://www.youtube.com/watch?v=nWvCd8lC4_Q --cpu
 ```
 
-Please replace `https://www.youtube.com/watch?v=nWvCd8lC4_Q` with the URL of the YouTube video you wish to download.
+Replace the URL with the YouTube video you wish to download.
 
-For more customized options like downloading only the video or generating only the subtitles, you can use the `--video_only` or `--srt_only` options.
+For more customization options, use the `--video_only` or `--srt_only` flags.
 
 - Custom Settings  
-For further details and customization options, please refer to the help information:
+For further details, consult the help section:
 
 ```bash
 ytws --help
 ```
 
 ## 🛫 GPU Acceleration
-Should you need to install the CUDA and cudnn suite, the following methods provide a simple solution:
-- For Linux:
-```
+
+For easy CUDA and cuDNN installation:
+- Linux:
+```bash
 conda install cudnn
 ```
 
+- Windows:
 
-- For Windows:
-```
+_Although using additional torch libraries may not be ideal, it's a straightforward approach for Windows (compared to Nvidia's official CUDA installation). Any alternative methods or suggestions are welcome!_
+```bash
 pip3 install torch --index-url https://download.pytorch.org/whl/cu118
-
-# While utilizing additional torch libraries may not be ideal, it's one of the most 
-# straightforward approaches I've discovered for Windows (relative to Nvidia's official CUDA 
-# installation). If you're aware of alternative methods or suggestions, your insight would be 
-# graciously appreciated!
 ```
 
-After setting above, ytws should work with gpu.
+After these settings, YTWS should work with a GPU.
 
-These steps aim to make the installation process as seamless as possible. Feel free to reach out if you have any questions or suggestions.
+## 🪄 Available Models
 
-## 🪄 Available Model
+Visit [here](https://huggingface.co/guillaumekln) for more details.
 
-Visit https://huggingface.co/guillaumekln for more details.
+## 🌟 Contributing to YTWS
 
-## 🌟 Contributing to ytws
-
-We welcome your support for ytws! Your contributions make a difference.
+We welcome contributions to YTWS! Your support makes a difference.
 
 ### How to Contribute
 - **Fork, Clone, Branch**: Start by forking and cloning the repository, then work in separate branches.
-- **Commit**: Follow the project's standards, and commit your changes.
-- **Pull Request**: Submit a brief pull request (PR) to the main branch.
+- **Commit**: Follow the project standards and commit your changes.
+- **Pull Request**: Submit a concise pull request (PR) to the main branch.
 
 ### Using Pre-Commit
-To ensure code format:
+To maintain code format:
 
 ```bash
 pip install pre-commit
 pre-commit install
 ```
 
-Pre-commit will guide you through necessary checks and adjustments.
+Pre-commit will guide you through necessary checks and corrections. Feel free to reach out if you have any questions or suggestions!
