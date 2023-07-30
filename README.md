@@ -3,7 +3,7 @@
 YTWS is a command-line tool designed to download videos from YouTube and generate subtitles, all with the power of the efficient `faster-whisper`.
 
 
-## Features
+## ⭐ Features
 
 - **Easy to Use**: Get started without hassle.
 - **Fast Subtitle Generation**: Utilize `faster-whisper` for quick results.
@@ -11,6 +11,29 @@ YTWS is a command-line tool designed to download videos from YouTube and generat
 - **Cross-Platform**: Works on Windows and Linux.
 
 These features make YTWS an efficient and user-friendly tool for downloading YouTube videos and generating subtitles.
+
+## ⚙ Requirements
+
+_Principle: Simplicity is key, and there should be no side effects._
+
+#### ffmpeg
+If you don't have ffmpeg installed, you can use the standard method to install ffmpeg in your computer's global environment (not detailed here), or you can use conda to install it in your Python virtual environment (recommended):
+```
+conda install ffmpeg
+```
+
+## 💽 Installation
+You can easily install YTWS using the following commands:
+
+```bash
+pip install ytws
+```
+or 
+```bash
+git clone https://github.com/faker2048/youtube-whisper
+cd youtube-whisper
+pip install .
+```
 
 ## 🚀 Quick Start
 You can begin downloading YouTube videos and generating subtitles right away. Here's a simple example of how to use YTWS:
@@ -34,41 +57,21 @@ Please replace `https://www.youtube.com/watch?v=nWvCd8lC4_Q` with the URL of the
 
 For more customized options like downloading only the video or generating only the subtitles, you can use the `--video_only` or `--srt_only` options.
 
-## 🎛️ Custom Settings
+- Custom Settings  
 For further details and customization options, please refer to the help information:
 
 ```bash
 ytws --help
 ```
 
-## 💽 Installation
-You can easily install YTWS using the following commands:
-
-```bash
-pip install ytws
-```
-or 
-```bash
-git clone https://github.com/faker2048/youtube-whisper
-cd youtube-whisper
-pip install .
-```
-
-### Preparations Before Running
-
-_Principle: Simplicity is key, and there should be no side effects._
-
-#### ffmpeg
-If you don't have ffmpeg installed, you can use the standard method to install ffmpeg in your computer's global environment (not detailed here), or you can use conda to install it in your Python virtual environment (recommended):
-```
-conda install ffmpeg
-```
-#### GPU Acceleration
+## 🛫 GPU Acceleration
 Should you need to install the CUDA and cudnn suite, the following methods provide a simple solution:
 - For Linux:
 ```
 conda install cudnn
 ```
+
+
 - For Windows:
 ```
 pip3 install torch --index-url https://download.pytorch.org/whl/cu118
@@ -79,7 +82,9 @@ pip3 install torch --index-url https://download.pytorch.org/whl/cu118
 # graciously appreciated!
 ```
 
-These steps aim to make the installation process as seamless as possible. Feel free to reach out if you have any questions or concerns!
+After setting above, ytws should work with gpu.
+
+These steps aim to make the installation process as seamless as possible. Feel free to reach out if you have any questions or suggestions.
 
 ## 🪄 Available Model
 
