@@ -34,9 +34,7 @@ pip install ytws
 ```
 or
 ```bash
-git clone https://github.com/faker2048/youtube-whisper
-cd youtube-whisper
-pip install .
+pip install git+https://github.com/faker2048/youtube-whisper.git
 ```
 
 ## 🚀 Usage
