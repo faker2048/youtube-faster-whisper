@@ -66,7 +66,26 @@ For more customization options, use the `--video_only` or `--srt_only` flags.
 For further details, consult the help section:
 
 ```bash
-ytws --help
+❯ ytws --help
+Usage: ytws [OPTIONS]
+
+  Download video from Youtube and generate subtitles.
+
+Options:
+  -u, --url TEXT         Youtube URL.  [required]
+  -n, --threads INTEGER  Number of threads to use.
+  -f, --format TEXT      Download format. See: https://github.com/yt-dlp/yt-
+                         dlp#format-selection-examples
+  -t, --translate        Translate the subtitles to English.
+  -m, --model_name TEXT  Name of the model to use. e.g.  (tiny, tiny.en, base,
+                         base.en, small, small.en,          medium, medium.en,
+                         large-v1, or large-v2), recommended: (large-v2)
+  -r, --model_root TEXT  Root directory for the models.
+  --cpu                  Use CPU instead of GPU. This is useful if you do not
+                         have a GPU.
+  -s, --srt_only         Only generate subtitles. Do not download video.
+  -v, --video_only       Only download video. Do not generate subtitles.
+  --help                 Show this message and exit.
 ```
 
 ## 🛫 GPU Acceleration
