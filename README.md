@@ -1,4 +1,4 @@
-# 🎥 YTWS: YouTube Download and Subtitle Generation Tool 🔥
+# 🎥 YTWS: YouTube Download and Faster-Whisper Subtitle Generation Tool 🔥
 
 YTWS is a command-line tool that allows you to download videos from YouTube and generate subtitles, all powered by the efficient `faster-whisper`.
 
