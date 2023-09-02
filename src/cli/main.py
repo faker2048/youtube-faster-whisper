@@ -1,10 +1,11 @@
-from threading import Thread
+import os
 import time
+from threading import Thread
 
 import click
 import yt_dlp
 from loguru import logger
-import os
+
 from src.whisper.subtitles import write_srt
 from src.whisper.transcribe import initialize_whisper_model
 from src.youtube.download import download, download_audio
