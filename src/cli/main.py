@@ -13,7 +13,7 @@ from src.youtube.download import download, download_audio
 
 @click.command()
 @click.option("--url", "-u", required=True, help="Youtube URL.")
-@click.option("--threads", "-n", default=8, help="Number of threads to use.")
+@click.option("--threads", "-n", default=16, help="Number of threads to use.")
 @click.option(
     "--format",
     "-f",
