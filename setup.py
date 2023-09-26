@@ -17,7 +17,7 @@ setup(
         "click==8.1.6",
         "faster_whisper==0.7.1",
         "loguru==0.7.0",
-        "yt_dlp==2023.7.6",
+        "yt_dlp==2023.9.24",
     ],
     entry_points="""
         [console_scripts]
