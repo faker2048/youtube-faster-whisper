@@ -28,14 +28,18 @@ def write_srt(segments: Iterable[Segment], file: str) -> None:
         logger.info(f"File {file} already exists. Skipping.")
         return
 
-    with open(file + ".tmp", "w") as f:
+    with open(file=file + ".tmp", mode="w", encoding="utf-8") as f:
         for i, segment in enumerate(segments, start=1):
             text = segment.text.strip()
 
-            f.write(f"{i}\n")
-            f.write(
-                f"{format_timestamp(segment.start)} --> {format_timestamp(segment.end)}\n"
-            )
-            f.write(f"{text}\n\n")
+            s: str = f"""
+{i}
+{format_timestamp(segment.start)} --> {format_timestamp(segment.end)}
+{text}
+
+"""
+            f.write(s)
+            print(s)
+
 
     os.rename(file + ".tmp", file)
