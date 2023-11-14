@@ -61,6 +61,12 @@ Options:
   --help                 Show this message and exit.
 ```
 
+Example:
+```bash
+ytws dt -u "https://www.youtube.com/watch?v=XXXXXXXX" -m large-v2 # Download and transcribe the video
+ytws dt -u "https://www.youtube.com/watch?v=XXXXXXXX" -f "bestvideo+bestaudio/best" 
+```
+
 After running the command, the media file and the generated subtitles will be saved in the same directory as the video file.
 
 ### Only Downloading YouTube Videos/Audios
@@ -107,6 +113,11 @@ Options:
   --cpu                  Use CPU instead of GPU. This is useful if you do not
                          have a GPU.
   --help                 Show this message and exit.
+```
+
+Example:
+```bash
+ytws t -f "video.mp4" -m large-v2
 ```
 
 After running the command, the generated subtitles will be saved in the same directory as the video file.
