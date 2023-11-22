@@ -12,10 +12,17 @@ YTWS is a tool provides a seamless way to download videos from YouTube and trans
 
 
 #### ffmpeg
+
+For Ubuntu:
+```bash
+sudo apt install ffmpeg
+```
+
 For Python virtual environment (recommended):
 ```bash
 conda install ffmpeg
 ```
+
 For Windows scoop users:
 ```bash
 scoop install ffmpeg
