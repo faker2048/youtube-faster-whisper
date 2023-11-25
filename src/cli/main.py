@@ -102,7 +102,7 @@ def dt(
 
     if not video_only:
         audio_file_name = download_audio(url, threads)
-        srt_file_name = audio_file_name.split(".")[0] + ".srt"
+        srt_file_name = audio_file_name + ".srt"
         if not os.path.exists(srt_file_name):
             logger.info(f"Transcribing audio from {audio_file_name}.")
             model = initialize_whisper_model(
