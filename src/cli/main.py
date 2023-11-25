@@ -93,6 +93,9 @@ def dt(
     if not srt_only:
         # Download video in parallel
         download_thread = Thread(target=download, args=(url, threads, format))
+        # download_thread should exit when main thread exits
+        # (i.e. when the user presses Ctrl+C)
+        download_thread.daemon = True 
         download_thread.start()
     else:
         logger.info("Skipping video download due to --srt_only flag.")
