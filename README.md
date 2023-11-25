@@ -59,7 +59,7 @@ Options:
   -t, --translate        Translate the subtitles to English.
   -m, --model_name TEXT  Name of the model to use. e.g.  (tiny, tiny.en, base,
                          base.en, small, small.en,          medium, medium.en,
-                         large-v1, or large-v2), recommended: (large-v2)
+                         large-v1, or large-v2, or large-v3), recommended: (large-v3)
   -r, --model_root TEXT  Root directory for the models.
   --cpu                  Use CPU instead of GPU. This is useful if you do not
                          have a GPU.
@@ -70,7 +70,7 @@ Options:
 
 Example:
 ```bash
-ytws dt -u "https://www.youtube.com/watch?v=XXXXXXXX" -m large-v2 # Download and transcribe the video
+ytws dt -u "https://www.youtube.com/watch?v=XXXXXXXX" -m large-v3 # Download and transcribe the video
 ytws dt -u "https://www.youtube.com/watch?v=XXXXXXXX" -f "bestvideo+bestaudio/best" 
 ```
 
@@ -124,7 +124,7 @@ Options:
 
 Example:
 ```bash
-ytws t -f "video.mp4" -m large-v2
+ytws t -f "video.mp4" -m large-v3
 ```
 
 After running the command, the generated subtitles will be saved in the same directory as the video file.

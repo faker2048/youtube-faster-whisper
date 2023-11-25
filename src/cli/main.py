@@ -38,7 +38,7 @@ def main():
     "-m",
     default="tiny.en",
     help="Name of the model to use. e.g.  (tiny, tiny.en, base, base.en, small, small.en,\
-          medium, medium.en, large-v1, or large-v2), recommended: (large-v2)",
+          medium, medium.en, large-v1, or large-v2 or large-v3), recommended: (large-v3)",
 )
 @click.option(
     "--model_root",
@@ -186,7 +186,7 @@ def d(url: str, threads: int, format: str):
     "-m",
     default="tiny.en",
     help="Name of the model to use. e.g.  (tiny, tiny.en, base, base.en, small, small.en,\
-          medium, medium.en, large-v1, or large-v2), recommended: (large-v2)",
+          medium, medium.en, large-v1, or large-v2 or large-v3), recommended: (large-v3)",
 )
 @click.option(
     "--model_root",
