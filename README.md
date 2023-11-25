@@ -1,12 +1,21 @@
 # 🎥 YTWS: YouTube Download and Faster-Whisper Subtitle Generation Tool 🔥
 
-YTWS is a tool provides a seamless way to download videos from YouTube and transcribe their audio content. It leverages the capabilities of [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) for efficient video downloading and the [`faster-whisper`](https://github.com/guillaumekln/faster-whisper) for accurate transcription. 
+YTWS, is a simple tool that downloads YouTube videos and creates subtitles quickly. It uses [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) for downloading and [`faster-whisper`](https://github.com/guillaumekln/faster-whisper) for transcribing, making it easy and efficient to use.
+
+Essentially, YTWS is a **user-friendly** wrapper integrating yt-dlp and faster-whisper, simplifying the user experience.  
+
+YTWS is short for YouTube Whisper.  
 
 ## ⭐ Features
 
 - **Easy to Use**: Start without any hassle.
 - **Fast Subtitle Generation**: Harness the speed of `faster-whisper`.
 - **GPU Acceleration**: A simple guide for harnessing GPU power.
+
+## 🪄 Functional
+-  Downloading and Transcribing YouTube Videos/Audios
+-  Only Downloading YouTube Videos/Audios
+-  Only Transcribing Videos/Audios
 
 ## ⚙ Requirements
 
