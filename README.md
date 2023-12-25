@@ -22,6 +22,9 @@ YTWS is short for YouTube Whisper.
 
 #### ffmpeg
 
+<details>
+<summary>Install ffmpeg</summary>
+
 For Ubuntu:
 ```bash
 sudo apt install ffmpeg
@@ -36,6 +39,7 @@ For Windows scoop users:
 ```bash
 scoop install ffmpeg
 ```
+</details>
 
 ## Installation
 
@@ -52,8 +56,21 @@ pip install git+https://github.com/faker2048/youtube-whisper.git
 ## 🚀 Usage
 
 ### Downloading and Transcribing YouTube Videos/Audios
+
 To download and transcribe a video, simply run:
 
+Example:
+```bash
+ytws dt -u "https://www.youtube.com/watch?v=XXXXXXXX" -m large-v3 # Download and transcribe the video
+ytws dt -u "https://www.youtube.com/watch?v=XXXXXXXX" -f "bestvideo+bestaudio/best" 
+```
+
+After running the command, the media file and the generated subtitles will be saved in the same directory as the video file.
+
+<details>
+  
+<summary>See more details</summary>
+  
 ```bash
 ❯ ytws dt --help
 Usage: ytws dt [OPTIONS]
@@ -77,17 +94,20 @@ Options:
   --help                 Show this message and exit.
 ```
 
-Example:
-```bash
-ytws dt -u "https://www.youtube.com/watch?v=XXXXXXXX" -m large-v3 # Download and transcribe the video
-ytws dt -u "https://www.youtube.com/watch?v=XXXXXXXX" -f "bestvideo+bestaudio/best" 
-```
-
-After running the command, the media file and the generated subtitles will be saved in the same directory as the video file.
+</details>
 
 ### Only Downloading YouTube Videos/Audios
 
 To download a video, simply run:
+
+Example:
+```bash
+ytws d -u "https://www.youtube.com/watch?v=XXXXXXXX" -f "bestvideo+bestaudio/best" 
+```
+
+<details>
+  
+<summary>See more details</summary>
 
 ```bash
 ❯ ytws d --help
@@ -109,9 +129,22 @@ Options:
   --help                 Show this message and exit.
 ```
 
+</details>
+
 ### Only Transcribing Videos/Audios
 
 To transcribe a video, simply run:
+
+Example:
+```bash
+ytws t -f "video.mp4" -m large-v3
+```
+
+After running the command, the generated subtitles will be saved in the same directory as the video file.
+
+<details>
+  
+<summary>See more details</summary>
 
 ```bash
 ❯ ytws t --help
@@ -131,12 +164,7 @@ Options:
   --help                 Show this message and exit.
 ```
 
-Example:
-```bash
-ytws t -f "video.mp4" -m large-v3
-```
-
-After running the command, the generated subtitles will be saved in the same directory as the video file.
+</details>
 
 
 
