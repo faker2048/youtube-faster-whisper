@@ -61,8 +61,12 @@ To download and transcribe a video, simply run:
 
 Example:
 ```bash
-ytws dt -u "https://www.youtube.com/watch?v=XXXXXXXX" -m large-v3 # Download and transcribe the video
-ytws dt -u "https://www.youtube.com/watch?v=XXXXXXXX" -f "bestvideo+bestaudio/best" 
+# Download (bestvideo+bestauido) format and transcribe the video
+ytws dt -u "https://www.youtube.com/watch?v=XXXXXXXX" -m large-v3
+# Specify the format using the -f option
+ytws dt -u "https://www.youtube.com/watch?v=XXXXXXXX" -m large-v3 -f "bestvideo+bestaudio/best"
+# Audio only
+ytws dt -u "https://www.youtube.com/watch?v=XXXXXXXX" -m large-v3 -f "worstaudio[tbr>100]"
 ```
 
 After running the command, the media file and the generated subtitles will be saved in the same directory as the video file.
