@@ -41,7 +41,7 @@ scoop install ffmpeg
 ```
 </details>
 
-## Installation
+## ⚙ Installation YTWS
 
 Install YTWS easily with these commands:
 
