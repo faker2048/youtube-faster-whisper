@@ -1,4 +1,7 @@
 # YTWS: YouTube Download and Faster-Whisper Subtitle Generation CLI Tool 🔥
+
+One command to download and transcript youtube video `ytws dt -u "https://www.youtube.com/watch?v=XXXXXXXX" -m large-v3 `  
+
 ![ytws-usage](https://github.com/faker2048/youtube-faster-whisper/assets/85467181/58739098-918f-4d82-86cc-6de3d2351a71)
 
 YTWS, is a simple CLI tool that downloads YouTube videos and creates subtitles quickly. It uses [`yt-dlp`](https://github.com/yt-dlp/yt-dlp) for downloading and [`faster-whisper`](https://github.com/guillaumekln/faster-whisper) for transcribing, making it easy and efficient to use.
@@ -9,7 +12,7 @@ YTWS is short for YouTube Whisper.
 
 ## ⭐ Features
 
-- **Easy to Use**: Start without any hassle.
+- **Easy to Use**: Start without any hassle. 
 - **Fast Subtitle Generation**: Harness the speed of `faster-whisper`.
 - **GPU Acceleration**: A simple guide for harnessing GPU power.
 
